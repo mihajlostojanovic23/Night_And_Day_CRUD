@@ -1,0 +1,515 @@
+body {
+    --backgroundPrime:#000000;
+    --backgroundStickNav: #0a0a0a;
+    --backgroundGallery: #161616;
+    --fontcolor: #ffbb00;
+    --fillColor:#ffbb00;
+    --colorNav: white;
+    --elementA: #ffbb00;
+    --svgNavHover: #ffbb00; 
+    --navbutton: white;
+    --scrolltrackTumb: #ffbb00; 
+    --photoGRIDbck: rgb(22, 22, 22);
+    --arrov:black;
+    --counterRadius: #ffbb00; 
+    --progressBAR: white;
+    --progressNumber: #614302;
+    --utisak: #bb8a02;
+    --utisakContent: rgb(14, 14, 14);
+    --footerBCG: rgb(17, 17, 17);
+    --footerHovericon: #cc9603;
+
+    /********** PRODUCT **********/
+    --bgcolor: rgb(22, 22, 22);
+    --product_text: #ffbb00;
+    --product_border: rgb(14, 14, 14);
+}
+
+
+.svetli_mod {
+    
+        --backgroundPrime:#f3f3f3;
+        --backgroundStickNav: #0a0a0a;
+        --backgroundGallery: #161616;
+        --fontcolor: #ffbb00;
+        --fillColor:#ffbb00;
+        --colorNav: rgb(0, 0, 0);
+        --elementA: #ffbb00;
+        --svgNavHover:black;
+        --navbutton:black;
+        --scrolltrackTumb: rgb(0, 0, 0); 
+        --photoGRIDbck: rgb(228, 228, 228);
+        --arrov:white;
+        --counterRadius: #2b2b2b; 
+        --progressBAR: rgb(133, 131, 131);
+        --progressNumber: black;
+        --utisak: #f3f3f3;
+        --utisakContent: #c5c4c4;
+        --footerBCG: rgb(170, 170, 170);
+        --footerHovericon: #252525;
+
+
+    /********** PRODUCT **********/
+    --bgcolor: rgb(236, 236, 236);
+    --product_text: #000000;
+    --product_border: rgb(194, 194, 194);
+    
+    }
+
+/*************** ROOT **********/
+
+::-webkit-scrollbar {
+    width: 18px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrolltrackTumb);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #e7ab04;
+    transition: 400ms;
+}
+
+
+* {
+    scroll-behavior: smooth;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ 
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+/*********************** ROOT END **************/
+
+
+
+
+/************************ BUTTON UP **************/
+#button_up {
+position: fixed;
+bottom: 5px;
+right: 10px;
+z-index: 10;
+display: none;
+cursor: pointer;
+animation: fade 900ms;
+transition: 400ms;
+}
+
+
+
+
+#button_up > svg {
+    fill: var(--svgNavHover);
+    transition: 400ms;
+}
+
+
+#button_up:hover  svg{
+    fill: #ffc31e;
+    transition: 400ms;
+}
+
+
+
+
+
+
+/********************** BUTTON UP END ************/
+
+/************************ NAVBAR ***********************/
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--backgroundPrime);
+    padding: 0px 10px;
+    flex-wrap: unset !important;
+}
+
+.active_indicator{
+    animation: fade 1s;
+}
+
+.active_nav {
+    background-color: var(--backgroundPrime);
+   
+}
+
+
+
+.order {
+    display: flex;    
+    justify-content: space-between;
+    width: 350px;
+    margin: auto 0px;
+}
+
+.order > li {
+    list-style: none;
+}
+.order > li > a {
+    text-decoration: none;
+    color: var(--colorNav);
+    font-size: 18px;
+    font-weight: 100;
+    transition: 300ms;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.order > li > a::after {
+    content: " ";
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.123rem;
+    background-color: var(--elementA);
+    transform: scale(0,1);
+    transition: 300ms;
+}
+.menu > ul > li > a:hover::after{
+    transform: scale(1,1);
+    transition: 300ms;
+}
+
+.order > li > a:hover {
+    color: var(--elementA);
+    transition: 300ms;
+}
+
+.logo > a > img {
+    width: 200px;
+    height: 100px;
+    margin: auto 0;
+}
+
+
+.login {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+    margin: auto 0;
+}
+
+.login >li > a {
+    text-decoration: none;
+    color: var(--navbutton);
+    text-transform: uppercase;
+    
+}
+
+.login >li > a > svg{
+    margin: auto 0px;
+    transition: 300ms;}
+
+.login > li > a > svg:hover {
+    fill:  var(--svgNavHover);
+    transition: 300ms;
+}
+
+.login > li > p > svg {
+
+    margin: auto 0px;
+    transition: 300ms;
+    cursor: pointer;
+    fill: var(--navbutton)}
+
+.login > li > svg {
+    fill: var(--navbutton);
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    display: none;
+    margin-right: 5px;
+}
+
+.meni {
+    display: flex;
+    justify-content: space-between;
+    width: 550px;
+    align-items: center;
+}
+
+.novinav{
+   display: none;
+}
+
+.novi{
+    display: block;
+    width: 100%;
+    background-color: var(--backgroundPrime);
+    z-index: 10000;
+    display: flex;
+    justify-content: space-around;
+    animation: fade 1s;
+}
+
+.novi > a {
+    text-decoration: none;
+    margin: 10px 0px;
+    color: var(--colorNav);
+    font-size: 20px;
+}
+
+#mode {
+    margin-bottom: 0px;
+}
+
+
+
+/************************ NAVBAR END ***********************/
+
+/************************ SCROLL INDICATOR ***********************/
+.indicator_content {
+    width: 100%;
+    height: 4px;
+    background: var(--backgroundPrime);
+
+}
+
+.indicator {
+    height: 4px;
+  background: #ffbb00;
+  width: 0%;
+}
+
+/************************ SCROLL INDICATOR END ***********************/
+
+.slovo {
+    color: var(--navbutton);
+    width: 26px;
+    height: 26px;
+    border: 2px solid var(--navbutton);
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+.slovo:hover {
+    background-color: var(--elementA);
+    transition: 300ms;
+}
+
+
+/**************************************************************************************/
+/*font-family: 'Indie Flower', cursive;*/
+
+/******************************PRODUCT************************************/
+
+.PRODUCT {
+    background-color: var( --bgcolor);
+    transition: 300ms all;
+    width: 100%;
+    
+}
+
+
+.title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 40px;
+    color: var(--svgNavHover);;
+}
+
+.hor-line {
+    width: 20%;
+    margin: 0px auto;
+    margin-top: 10px;
+    color: var(--svgNavHover);
+    height:3px;
+    opacity: 1;
+    margin-bottom: 30px;
+    
+}
+
+.product-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.products {
+
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 50px;
+
+}
+
+.img {
+    position: relative;
+    width: 100%;
+    height: 170px;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.24);
+    opacity: 0;
+    transition: 300ms all;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.img:hover .overlay {
+    opacity: 1;
+    transition: 300ms all;
+}
+.product {
+    width: 330px;
+    min-height: 400px;
+    border: 1px solid var( --product_border);
+    box-shadow: 15px 10px 32px -2px rgba(0,0,0,0.77);
+-webkit-box-shadow: 15px 10px 32px -2px rgba(0,0,0,0.77);
+-moz-box-shadow: 15px 10px 32px -2px rgba(0,0,0,0.77);
+border-radius: 10px;
+}
+
+.product_name {
+    text-align: center;
+    font-size: 25px;
+    border-bottom: 2px solid #ffbb00;
+    color: var(--product_text);
+}
+
+.product_price {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 2px solid #ffbb00;
+    color: var(--product_text);
+}
+
+.product_details {
+    text-align: center;
+    min-height: 100px;
+    width: 100%;
+    color: var(--product_text);
+    padding: 5px 5px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+.btn_details {
+    width: 170px;
+    border: 0px;
+    background-color: #ffbb00;
+    height: 40px;
+    border-radius: 5px;
+    transition: 300ms;
+}
+
+.btn_details:hover {
+    background-color: #d49c00;
+    transition: 300ms;
+}
+
+.create_prod {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+.create_prod > div {
+    height: 40px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 5px;
+    background-color: var(--fillColor);
+    border-radius: 5px;
+    transition: 300ms ;
+    cursor: pointer;
+}
+
+.create_prod > div:hover {
+    transition: 300ms ;
+    background-color:#cc9603;
+    
+}
+
+.create_prod > div > a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+/****************** RESPONSIVE ******************/
+@media only screen  and (max-width: 1118px) {
+
+    .products {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        gap: 50px;
+        
+        }
+
+}
+
+
+
+
+@media only screen  and (max-width: 747px) {
+
+    .products {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        
+        }
+
+}

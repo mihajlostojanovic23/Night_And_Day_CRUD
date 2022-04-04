@@ -1,0 +1,240 @@
+@media only screen and (max-width: 1200px) {
+    .utisci_content {
+        display: flex;
+    }
+
+    .utisci_item {
+        margin: 40px 60px;
+    }
+}
+
+
+
+@media only screen and (max-width: 995px ) {
+    .utisci_item {
+        margin: 40px 60px;
+    }
+
+    .strela {
+        margin-top: -16px;
+    }
+
+    .container {
+        width: 100%;
+        display: block;
+        position: relative;
+    }
+
+    .picture  {
+        display: flex;
+        justify-content: center;
+       margin: 30px auto;
+    }
+
+    .overlay_photo {
+        display: none;
+    }
+
+    .opis {
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    .opis > header {
+        text-align: center;
+    }
+
+    .opis > p {
+        text-align: center;
+    }
+}
+
+
+@media only screen and (max-width: 940px ) {
+
+    .utisci_item {
+        margin: 20px 20px;
+    }
+
+.picture > img {
+    width: 300px;
+    height: 300px;
+}
+
+.counter_content {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.counter_radius {
+    margin: 20px 60px;
+}
+}
+
+/*827*/
+
+@media only screen and (max-width: 827px) {
+    .order {
+        display: none;
+    }
+ 
+    .login > li > svg {
+        display: block;
+    }
+
+    
+
+    .novi > a:hover {
+        color: #ffbb00;
+    }
+
+    .footer_content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 706px) {
+
+    .utisci_item {
+        margin: 20px 5px;
+    }   
+
+.counter_radius {
+        margin: 0px 10px;
+    }
+    
+.buttons_below_slider .button {
+    width: 30px;
+    height: 30px;
+}
+
+
+.pictures {
+    margin: 0px 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px 200px 200px 200px;
+    grid-gap: 5px;
+    grid-template-areas:
+    "a a b b"
+    "a a b b"
+    "e e e e"
+    "e e e e"
+    "f f c c"
+    "f f c c";
+}
+
+.photo_layout {
+    height: 1450px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 2px 15px; 
+}
+}
+
+
+
+@media only screen and (max-width: 487px) {
+
+.counter_radius {
+        margin: 0px 10px;
+        width: 150px;
+        height: 150px;
+}
+
+.counter_logo >svg {
+    width: 30px;
+    height: 30px;
+
+}
+
+.counter_number {
+    font-size: 35px;
+    margin-top: 23px;
+}
+
+
+.opis {
+    width: 90%;
+    margin-top: 10px;
+}
+
+.opis p {
+   font-size: 18px;
+}
+
+.picture > img {
+    width: 250px;
+    height: 250px;
+}
+
+.novi {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    line-height: 17px;
+    padding: 20px 0px;
+}
+
+.novi > a {
+    width: 100%;
+    text-align: center;
+    margin: 0px auto;
+    font-size: 20px;
+    
+}
+
+.novi > a:hover {
+    color: #ffbb00;
+}
+
+
+
+.buttons_below_slider .button {
+    width: 20px;
+    height: 20px;
+}
+
+.pictures {
+    margin: 0px 5px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 200px 200px 200px 200px;
+    grid-gap: 5px;
+    grid-template-areas:
+    "a a a b b b"
+    "a a a b b b"
+    "c c c d d d"
+    "c c c d d d"
+    "e e e f f f"
+    "e e e f f f"
+   
+}
+
+.photo_layout {
+    height: 1500px;
+}
+
+.progress_bar {
+    padding: 0px 10px;
+}
+
+}
+
+@media only screen and (max-width: 395px) {
+    .bar_title {
+        font-size: 25px;
+    }
+}
+
+
+/************************END ******************/
+

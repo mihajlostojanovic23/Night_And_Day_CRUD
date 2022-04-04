@@ -1,0 +1,113 @@
+@media only screen and (max-width: 876px) {
+    .contact_form {
+        background-size: unset;
+    }
+   
+}
+
+@media only screen and (max-width: 1073px) {
+    .contact_form {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        
+    }
+    .contact_content {
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+
+
+}
+
+
+
+@media only screen and (max-width:706px) {
+    footer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        padding: 2px 15px; 
+    }
+}
+
+@media only screen and (max-width: 827px) {
+    .order {
+        display: none;
+    }
+ 
+    .login > li > svg {
+        display: block;
+    }
+
+    
+
+    .novi > a:hover {
+        color: #ffbb00;
+    }
+
+    .footer_content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    
+}
+
+
+@media only screen and (max-width: 525px) {
+    .contactForm {
+        width: 100%;
+        
+    }
+    
+    
+    .contactForm > form > input[type=text] {
+        width: 100%;
+    }
+
+    form > input {
+        margin: 10px 0px;
+    }
+
+    .contactForm > form > input[type=email] {
+        margin: 10px 0px;
+    }
+
+
+
+}
+
+
+
+@media only screen and (max-width: 487px) {
+    .novi {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        line-height: 17px;
+        padding: 20px 0px;
+    }
+    
+    .novi > a {
+        width: 100%;
+        text-align: center;
+        margin: 0px auto;
+        font-size: 20px;
+        
+    }
+    
+    .novi > a:hover {
+        color: #ffbb00;
+    }
+    
+    
+    
+  
+    
+    
+    }
+    

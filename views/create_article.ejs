@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Articles</title>
+    <link rel="stylesheet" href="css/create_article.css">
+    <link rel="icon" href="img/logo.png" type="image/icon type">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="create_product">
+        <p class="create_txt">Kreiraj proizvod</p>
+        <div class="logo"><a href="/"><img src="img/logo.png" alt=""></a></div>
+        <form action="/create_product" method="POST"  class="product_form">
+           <input type="text" name="naziv" required placeholder="Naziv Proizvoda" >
+           <input type="number" name="cena" placeholder="Cena" >
+           <input type="file" name="slika" required >
+           <textarea name="opis" cols="30" rows="10" placeholder="Unesi Opis" required></textarea> <br>
+            <input type="submit" value="Kreiraj">
+        </form>
+    </div>
+</body>
+</html>

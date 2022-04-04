@@ -1,0 +1,1082 @@
+body {
+    --backgroundPrime:#000000;
+    --backgroundStickNav: #0a0a0a;
+    --backgroundGallery: #161616;
+    --fontcolor: #ffbb00;
+    --fillColor:#ffbb00;
+    --colorNav: white;
+    --elementA: #ffbb00;
+    --svgNavHover: #ffbb00; 
+    --navbutton: white;
+    --scrolltrackTumb: #ffbb00; 
+    --photoGRIDbck: rgb(22, 22, 22);
+    --arrov:black;
+    --counterRadius: #ffbb00; 
+    --progressBAR: white;
+    --progressNumber: #614302;
+    --utisak: #bb8a02;
+    --utisakContent: rgb(14, 14, 14);
+    --footerBCG: rgb(17, 17, 17);
+    --footerHovericon: #cc9603;
+}
+
+
+.svetli_mod {
+    
+        --backgroundPrime:#f3f3f3;
+        --backgroundStickNav: #0a0a0a;
+        --backgroundGallery: #161616;
+        --fontcolor: #ffbb00;
+        --fillColor:#ffbb00;
+        --colorNav: rgb(0, 0, 0);
+        --elementA: #ffbb00;
+        --svgNavHover:black;
+        --navbutton:black;
+        --scrolltrackTumb: rgb(0, 0, 0); 
+        --photoGRIDbck: rgb(228, 228, 228);
+        --arrov:white;
+        --counterRadius: #2b2b2b; 
+        --progressBAR: rgb(133, 131, 131);
+        --progressNumber: black;
+        --utisak: #f3f3f3;
+        --utisakContent: #c5c4c4;
+        --footerBCG: rgb(170, 170, 170);
+        --footerHovericon: #252525;
+
+
+
+    }
+
+/*************** ROOT **********/
+
+::-webkit-scrollbar {
+    width: 18px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrolltrackTumb);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #e7ab04;
+    transition: 400ms;
+}
+
+
+* {
+    scroll-behavior: smooth;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+/*********************** ROOT END **************/
+
+
+/********************** PRELOADER **************/
+#preloader {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100000;
+    
+}
+
+
+
+.preloader_img {
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#preloader > img {
+    width: 100%;
+    height: auto;
+}
+
+.spin {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+border: 3px solid white;
+border-top-color: #ffbb00;
+animation:  spin 1s linear infinite;
+}
+
+.hide {
+    animation:  hide 3s forwards;
+}
+
+@keyframes spin {
+100% {
+    transform: rotate(300deg);
+}
+}
+@keyframes hide  { 
+    0% {
+        opacity: 1;
+        visibility:visible;
+    }
+
+    50% {
+        opacity: 1;
+        visibility:visible;
+    }
+
+    
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+/********************** PRELOADER END **************/
+
+
+
+/************************ BUTTON UP **************/
+#button_up {
+position: fixed;
+bottom: 5px;
+right: 10px;
+z-index: 10;
+display: none;
+cursor: pointer;
+animation: fade 900ms;
+transition: 400ms;
+}
+
+
+
+
+#button_up > svg {
+    fill: var(--svgNavHover);
+    transition: 400ms;
+}
+
+
+#button_up:hover  svg{
+    fill: #ffc31e;
+    transition: 400ms;
+}
+
+
+
+
+
+
+/********************** BUTTON UP END ************/
+
+/************************ NAVBAR ***********************/
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--backgroundPrime);
+    padding: 0px 10px;
+    flex-wrap: unset !important;
+}
+
+.active_indicator{
+    animation: fade 1s;
+}
+
+.active_nav {
+    background-color: var(--backgroundPrime);
+   
+}
+
+
+
+.order {
+    display: flex;    
+    justify-content: space-between;
+    width: 350px;
+    margin: auto 0px;
+}
+
+.order > li {
+    list-style: none;
+}
+.order > li > a {
+    text-decoration: none;
+    color: var(--colorNav);
+    font-size: 18px;
+    font-weight: 100;
+    transition: 300ms;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.order > li > a::after {
+    content: " ";
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.123rem;
+    background-color: var(--elementA);
+    transform: scale(0,1);
+    transition: 300ms;
+}
+.menu > ul > li > a:hover::after{
+    transform: scale(1,1);
+    transition: 300ms;
+}
+
+.order > li > a:hover {
+    color: var(--elementA);
+    transition: 300ms;
+}
+
+.logo > a > img {
+    width: 200px;
+    height: 100px;
+    margin: auto 0;
+}
+
+
+.login {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+    margin: auto 0;
+}
+
+.login >li > a {
+    text-decoration: none;
+    color: var(--navbutton);
+    text-transform: uppercase;
+    
+}
+
+.login >li > a > svg{
+    margin: auto 0px;
+    transition: 300ms;}
+
+.login > li > a > svg:hover {
+    fill:  var(--svgNavHover);
+    transition: 300ms;
+}
+
+.login > li > p > svg {
+
+    margin: auto 0px;
+    transition: 300ms;
+    cursor: pointer;
+    fill: var(--navbutton)}
+
+.login > li > svg {
+    fill: var(--navbutton);
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    display: none;
+    margin-right: 5px;
+}
+
+.meni {
+    display: flex;
+    justify-content: space-between;
+    width: 550px;
+    align-items: center;
+}
+
+.novinav{
+   display: none;
+}
+
+.novi{
+    display: block;
+    width: 100%;
+    background-color: var(--backgroundPrime);
+    z-index: 10000;
+    display: flex;
+    justify-content: space-around;
+    animation: fade 1s;
+}
+
+.novi > a {
+    text-decoration: none;
+    margin: 10px 0px;
+    color: var(--colorNav);
+    font-size: 20px;
+}
+
+#mode {
+    margin-bottom: 0px;
+}
+
+
+
+/************************ NAVBAR END ***********************/
+
+/************************ SCROLL INDICATOR ***********************/
+.indicator_content {
+    width: 100%;
+    height: 4px;
+    background: var(--backgroundPrime);
+
+}
+
+.indicator {
+    height: 4px;
+  background: #ffbb00;
+  width: 0%;
+}
+
+/************************ SCROLL INDICATOR END ***********************/
+
+
+/************************HEADER SLIDER**************************/
+
+.slider {
+    width: 100%;
+    
+    
+}
+
+.slide {
+    max-width: 100%;
+   
+    overflow: hidden;
+    position: relative;
+}
+
+.slide .slide_item {
+    display: none;
+}
+
+.slide .slide_item > img {
+width: 100%;
+
+object-fit: cover;
+object-position: 50% 50%;
+background-size: 100%;
+background-position: center;
+
+z-index: 10;
+}
+
+#active {
+    display: block;
+    animation: fade 0.9s;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadedown {
+    0% {
+        opacity: 1;
+        
+    }
+
+    100% {
+       opacity: 0;
+        transform: opacity linear;
+    }
+}
+
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: opacity linear;
+    }
+}
+
+.previous {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    cursor:pointer;
+}
+
+.next {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor:pointer;
+}
+
+.next svg, .previous svg {
+    fill: #ffbb00;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.buttons-2 {
+    display: flex;
+    align-content: center;
+    
+}
+
+.buttons_below_slider {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.buttons_below_slider .button {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    margin: auto 20px;
+}
+
+#button {
+    background-color: #ffbb00;
+}
+
+.klasa{
+    background-color: none;
+}
+
+/******************* SLIDER END ********************/
+
+
+
+
+/********************* SECTION 3 *********************/
+
+.content_1 {
+    width: 100%;
+    background-color: var(--backgroundPrime);
+    transition: .5s all;
+}
+
+.content_1 header {
+    font-family: 'Indie Flower', cursive;
+    color: var(--svgNavHover);
+    font-size: 40px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.linija {
+    width: 20%;
+    margin: 0px auto;
+    margin-top: 10px;
+    color: var(--svgNavHover);
+    height:3px;
+    opacity: 1;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.picture {
+    margin-top: 30px;
+    width: 50%;
+    position: relative;
+}
+
+.animate__slideInLeft {
+    transition: 2s;
+}
+
+.picture > img {
+border-radius: 50%;
+background-position: center;
+background-size: 100%;
+width: 450px;
+height: 450px;
+
+}
+
+.opis {
+    margin-top: 30px;
+    width: 60%;
+    margin-left: 90px;
+}
+
+.opis > header {
+    font-size: 30px;
+    color: var(--colorNav);
+    font-family: cursive;
+}
+
+.opis p {
+    font-size: 20px;
+    margin-top: 20px;
+    color: var(--navbutton);
+    line-height: 1.9rem;
+}
+
+.overlay_photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.541);
+    background-position: center;
+    border-radius: 50%;
+    
+}
+
+/********************** SECTION 3 END ****************************/
+
+
+
+/********************** SECTION 4 PHOTO GRID ****************************/
+.photo_layout{ 
+    height: 1250px;
+    background-color: var(--photoGRIDbck);
+    position: relative;
+    transition: .5s all;
+}
+
+.strela {
+    position: relative;
+    height: 50px;
+    background-color: var(--backgroundPrime);
+    margin-top: 0px;
+}
+
+.arrow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    
+    top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    transform: rotate(45deg);
+    background-color: var(--backgroundPrime);
+}
+
+
+
+.photo_layout header {
+    width: 100%; 
+    height: 20px; 
+    text-align: center;
+    padding-top: 90px;
+    position: relative;
+}
+
+
+
+.photo_layout > header > span {
+    position: absolute;
+    font-size: 40px; 
+    font-family: 'Indie Flower', cursive;
+    top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    color: var(--svgNavHover);
+    margin-top: 30px;
+    
+    height: 60px;
+    background-color: var(--photoGRIDbck)
+}
+
+
+.slike  > p {
+    color: var(--svgNavHover);
+    font-size: 40px; 
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+   margin-top: 40px;
+}
+
+.pictures {
+    margin: 0px 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px 200px 200px 200px;
+    grid-gap: 5px;
+    grid-template-areas:
+    "a a b b"
+    "a a d d"
+    "e e d d"
+    "f f f c"
+    "f f f c";
+}
+
+
+.a, .b, .c, .d, .e, .f {
+    width: 100%;
+    height: auto;
+    object-position: 50% 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+.a {
+    grid-area: a;
+    background-image: url("../img/photos/picture1.jpg");
+   
+}
+
+.b {
+    grid-area: b;
+    background-image: url("../img/photos/picture2.jpg");
+}
+
+.c {
+    grid-area: c;
+    background-image: url("../img/photos/picture3.jpg");
+}
+
+.d {
+    grid-area: d;
+    background-image: url("../img/photos/picture4.jpg");
+}
+
+.e {
+    grid-area: e;
+    background-image: url("../img/photos/picture5.jpg");
+}
+.f {
+    grid-area: f;
+    background-image: url("../img/photos/picture6.jpg");
+}
+
+.img_item > .image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: 50% 50%;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+
+
+
+
+.img_overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.568);
+    transition: 300ms;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+
+.img_item:hover .img_overlay { 
+    display: block;
+    animation: fade 0.5s;
+}
+
+.img_item:hover .img_text {
+    display: block;
+    animation: fade 1.0s;
+}
+
+
+
+.img_text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+
+#img-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fade 500ms;
+    z-index: 2000;
+    }
+
+
+
+   
+
+#img-window img {
+        object-position: 50% 50%;
+        background-position: center;
+        background-size: 100%;
+        max-width: 80vw;
+        max-height: 80vh;
+        cursor: pointer;
+        
+}
+/********************** SECTION 4 PHOTO GRID END ****************************/
+
+
+
+/************************ COUNTER ***************************/
+
+.counter {
+    background-color:  var(--photoGRIDbck);
+    width: 100%;
+    transition: .5s all; 
+}
+
+.statistic {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    color: var(--svgNavHover);
+    font-size: 40px;
+    padding-top: 60px;
+    font-weight: bold;
+}
+
+.counter_content {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+}
+
+.counter_radius{
+    width: 220px;
+    height: 220px;
+    border: 7px inset var(--counterRadius);
+    border-radius: 50%;
+    position: relative;
+}
+
+.counter_logo > svg {
+min-width: 60px;
+height: 60px;
+position: absolute;
+top: 30px;
+right: 0;
+left: 0;
+margin-left: auto;
+margin-right: auto;
+fill: var(--svgNavHover);
+animation: fade 1s;
+}
+
+.counter_number {
+    position: absolute;
+    font-family: 'Indie Flower', cursive;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--svgNavHover);
+    margin-top: 30px;
+}
+
+.counter_text {
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--svgNavHover);
+    font-weight: bold;
+}
+
+/********************** COUNTER END *******************/
+
+
+/********************** PROGRESS BAR *******************/
+.progress_bar {
+    width: 100%;
+    background-color: var(--photoGRIDbck);
+    padding: 20px 60px;
+    transition: .5s all;
+}
+
+.content_bar {
+    width: 100%;
+    padding: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.bar {
+    width: 100%
+   
+   
+}
+
+.bar_title {
+    color: var(--svgNavHover);
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bar_area {
+    width: 100%;
+    height: 40px;
+    background-color: var(--progressBAR);
+    position: relative;
+    border-radius: 25px;
+}
+
+.bar_color {
+    position: absolute;
+    height: 40px;
+    width: 30px;
+    background-color: #ffbb00;
+    border-radius: 25px;
+    padding-left: 10px;
+    transition: all 1s;
+
+}
+.bar_color >  p {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0;
+    color: var(--progressNumber);
+    transition: all 1s;
+}
+
+/********************** PROGRESS BAR END *******************/
+
+/********************** UTISCI *******************/
+.utisci {
+    width: 100%;
+    background-color: var(--backgroundPrime);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: .5s all;
+}
+
+.utisci_content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+    width: 100%;
+    
+}
+
+.utisci > h2 {
+    margin: 20px 0px;
+    text-align: center;
+    font-size: 40px;
+    color: var(--svgNavHover);
+}
+
+.utisci_item {
+    margin: 10px 0px 20px 0px;
+    width: 300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: .5s all;
+    background-color: var(--utisakContent);
+}
+
+.utisak {
+    width: 100%;
+    transition: 0.5s all;
+    border-radius:  10px;
+    background-color: var(--utisak)
+}
+
+
+.utisak:hover{
+background-color:#ffe600; 
+transition: .5s all;
+}
+
+
+.utisak > img {
+width: 100%;
+height: 450px;
+background-position: center;
+object-fit: 50% 50%;
+background-size: cover;
+}
+
+
+
+.opinion {
+    font-size: 20px;
+    text-align: center;
+    color:var(--svgNavHover);
+    margin: 10px 0px;
+    padding: 0px 5px;
+}
+
+/********************** UTISCI END *******************/
+
+
+/********************** FOOTER *******************/
+.footer {
+    background-color: var(--footerBCG);
+    width: 100%;
+    padding: 0px 50px;
+    padding-top: 10px;
+    transition: .5s all;
+}
+
+.footer > h2 {
+    text-align: center;
+    font-size: 25px;
+    color:var(--svgNavHover);
+    margin-bottom: 20px;
+}
+
+.footer_content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_item {
+    width: 400px;
+    position: relative;
+}
+.footer_logo {
+    width: 100%;
+    display: flex;
+    margin: 25px 0px;
+}
+
+.footer_logo > img {
+    background-size: 100%;
+    width: 70%;
+    margin: 0px auto;
+}
+
+.footer_icon > svg {
+    width: 26px;
+    height: 26px;
+    fill: var(--svgNavHover);
+}
+
+
+.footer_icon > p {
+    height: auto;
+    padding-left: 10px;
+}
+
+.footer_icon > a {
+    height: auto;
+    padding-left: 10px;
+    text-decoration: none;
+    color:var(--svgNavHover);
+    transition: .5s all;
+}
+.footer_icon > a:hover {
+    color: var(--footerHovericon);
+    transition: .5s all;
+}
+
+.footer_icon {
+    color: var(--svgNavHover);
+    height: auto;
+    display: flex;
+    margin: 10px 0px;
+    
+}
+
+li > .soc > svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--svgNavHover);
+    transition: .5s all;
+    margin: 0px 10px;
+}
+
+li > .soc > svg:hover {
+    fill: var(--footerHovericon);
+    transition: .5s all;
+}
+
+/********************** FOOTER END*******************/
+
+
+/*************DESIGN BY ******************/
+footer {
+    height: auto;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+footer > small {
+    color: white;
+    
+}
+
+.slovo {
+    color: var(--navbutton);
+    width: 26px;
+    height: 26px;
+    border: 2px solid var(--navbutton);
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slovo:hover {
+    background-color: var(--elementA);
+    transition: 300ms;
+}

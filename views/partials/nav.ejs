@@ -1,0 +1,78 @@
+<!------------------------- NAVBAR ----------------------------->
+
+
+<section id="button_up"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
+    <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"/>
+  </svg></section>
+
+
+<section  class="navbar " id="nav">
+    <div class="logo">
+        <a href="/"><img src="img/logo.png" alt=""></a>
+        
+    </div>
+    <div class="meni">
+       
+        <div class="menu">
+        <ul class="order">
+            <li><a href="/#onama">O nama</a></li>
+            <li><a href="/menu">Meni</a></li>
+            <li><a href="/#gallery">Galerija</a></li>
+            <li><a href="/contact">Kontakt</a></li>
+        </ul>
+    </div>
+  
+    <div class="buttons">
+        <div class="buttons-2">
+        <ul class="login">
+            <li><svg id="hamburg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg></li>
+            
+
+
+            
+            
+
+            <% if(locals.email) 
+            { %>
+                <% if(locals.email) { 
+                    var x= locals.name;
+                    var first =  x.charAt(0)
+                %>
+               
+                    <div class="slovo"> <%= first %></div>
+                <% } %>
+                
+               
+
+                <li><a href="/logout"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person"  viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M96 480h64C177.7 480 192 465.7 192 448S177.7 416 160 416H96c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h64C177.7 96 192 81.67 192 64S177.7 32 160 32H96C42.98 32 0 74.98 0 128v256C0 437 42.98 480 96 480zM504.8 238.5l-144.1-136c-6.975-6.578-17.2-8.375-26-4.594c-8.803 3.797-14.51 12.47-14.51 22.05l-.0918 72l-128-.001c-17.69 0-32.02 14.33-32.02 32v64c0 17.67 14.34 32 32.02 32l128 .001l.0918 71.1c0 9.578 5.707 18.25 14.51 22.05c8.803 3.781 19.03 1.984 26-4.594l144.1-136C514.4 264.4 514.4 247.6 504.8 238.5z"/></svg></a></li> &nbsp;
+                <% } %>
+
+                <% if(locals.email == null) 
+                { %>
+            <li><a href="/login"> <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+              </svg></a></li> &nbsp; 
+              <% } %>
+            <li><p id="mode"><svg id="mod" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+                <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+              </svg></p></li>
+        </ul>
+    </div>
+    </div>
+    </div>
+</section>
+<div class="novinav" id="mylinks">
+    <a href="/#onama">O nama</a> <br>
+    <a href="/menu">Meni</a> <br>
+    <a href="/#gallery">Galerija</a> <br>
+    <a href="/contact">Kontakt</a> 
+  </div>
+
+<!------------------------- NAVBAR END ----------------------------->
+
+ <!--------------------- SCROLL INDICATOR----------------------->
+ <div id="indikator" class="indicator_content">
+    <div id="indi" class="indicator"></div>
+</div>
+
+<!--------------------- SCROLL INDICATOR END----------------------->

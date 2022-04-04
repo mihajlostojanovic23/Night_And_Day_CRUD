@@ -1,0 +1,33 @@
+/***************** REGISTER  ***************/
+
+@media only screen and (max-width: 600px) {
+    .prijava {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+
+    .login-form {
+        width: 100%;
+        border-radius: unset;
+    }
+
+    .prijava input {
+       width: 70%;
+        display: flex;
+        flex-direction: column;
+      margin: 0px auto;
+    }
+
+    input[type="date"] {
+        flex-direction:unset;
+    }
+
+    a svg {
+        z-index: 100000;
+    }
+
+    .registruj input {
+        width: 200px;
+    }
+ }

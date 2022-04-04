@@ -1,0 +1,138 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: auto;
+    background: linear-gradient(90deg, rgba(31,241,7,1) 0%, rgba(246,223,9,1) 50%, rgba(255,39,0,1) 100%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.301);
+}
+
+.product_form {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+position: relative;
+
+}
+
+input:nth-child(1) {
+    margin-top: 10px;
+    width: 45%;
+    height: 40px;
+    margin-right: 5px;
+}
+input:nth-child(2) {
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 45%;
+    height: 40px;
+    display: flex;
+    justify-items: center;
+}
+
+
+textarea {
+    width: 95%;
+    padding: 2px 10px;
+    list-style: none;
+    background: #e6e6e6d7;
+    font-size: 15px;
+    border: 3px solid #b48401;
+    transition: 300ms;
+    border-radius: 5px;
+}
+
+textarea::placeholder {
+    color: black;
+}
+
+textarea:focus {
+    color: black;
+    outline: none;
+    border: 3px solid #ffbb00;
+    transition: 300ms;
+}
+
+
+.create_product {
+    width: 600px;
+    min-height: 90vh;
+    background-color: black;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 9px 10px 39px 3px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 9px 10px 39px 3px rgba(0,0,0,0.7);
+    -moz-box-shadow: 9px 10px 39px 3px rgba(0,0,0,0.7);
+}
+
+input {
+padding: 0px 10px;
+background: unset;
+border: none;
+list-style: none;
+border-bottom: 1px solid white;
+transition: 300ms all;
+color: #818181;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 1px solid #ffbb00;
+    transition: 300ms;
+    color: white;
+}
+
+input:nth-child(3) {
+    color: white;
+    margin: 10px 0px;
+    border: none;
+   }
+   
+
+   input[type=submit] {
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #ffbb00;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+    transition: 300ms;
+    border-radius: 5px;
+}
+
+
+input[type=submit]:hover {
+    background-color: #e0a501;
+    transition: 300ms;
+}
+
+
+.create_txt {
+    color: #ffbb00;
+    text-align: center;
+    font-size: 35px;
+    padding-top: 10px;
+}
+
+.logo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}

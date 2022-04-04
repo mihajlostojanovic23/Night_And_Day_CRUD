@@ -1,0 +1,7 @@
+@media only screen and (max-width: 650px) {
+.login-form {
+    width: 100%;
+ 
+    border-radius: 0%;
+}
+}

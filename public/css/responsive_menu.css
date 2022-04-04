@@ -1,0 +1,15 @@
+@media only screen and (max-width: 827px) {
+    .order {
+        display: none;
+    }
+ 
+    .login > li > svg {
+        display: block;
+    }
+
+    
+
+    .novi > a:hover {
+        color: #ffbb00;
+    }
+}
