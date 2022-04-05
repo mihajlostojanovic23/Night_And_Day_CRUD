@@ -62,14 +62,15 @@
                 <% if(locals.email) 
                 { %>
                     <% if(locals.email) { 
-                        var x= locals.name;
+                        locals.user.forEach(function(koki) { %>
+                      <%  var x= koki.ime;
                         var first =  x.charAt(0)
                     %>
                     <div class="slovo"> <a href="/myacc"> <%= first %></a></div>
-                    <% } %>
+                    <% }) %>
                     
                     
-                    <% } %>
+                    <% }} %>
 
                     <% if(locals.email == null) 
                     { %>

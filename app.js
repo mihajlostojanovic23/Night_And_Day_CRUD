@@ -41,6 +41,7 @@ app.use(session({
         if(req.session.korisnik){
         res.locals.email = req.session.korisnik.email; 
         res.locals.name = req.session.korisnik.name
+        res.locals.user = req.session.korisnik.user_info
         }
         else{
         res.locals.email = null;
@@ -55,22 +56,7 @@ app.get('/logout', (req,res)=> {
 })
 
 
-app.get('/',(req,res)=> {
-    if(req.session.korisnik){
-        var mail = req.session.korisnik.email; }
-        
-        else{
-        res.locals.email = null; }
-        
-    connection.query('SELECT * FROM korisnik WHERE email = ?',[mail], (err,result)=> {
-        if(err) {
-            res.status(500);
-            return res.end(err.message)
-        }
-        res.status(200)
-        res.render("index", {ceo_korisnik: result})
-    })
-})
+
 
 
 
@@ -103,6 +89,7 @@ app.get('/menu', (req,res)=> {
     
 })
 
+
 app.get("/myacc", (req,res)=> {
     if(req.session.korisnik){
         var mail = req.session.korisnik.email; }
@@ -118,14 +105,104 @@ app.get("/myacc", (req,res)=> {
             }
             res.status(200)
             res.render('acc', {korisnik: result})
-            console.log(result)
+            
         })
 })
 
+app.post('/update/:id', (req,res) => {
+    var id = req.params.id
+      connection.query("UPDATE korisnik SET ime='"+req.body.ime+"', prezime='"+req.body.prezime+"', datum_rodjenja='"+req.body.datum_rodjenja+"', email='"+req.body.email+"', password='"+req.body.password+"', username='"+req.body.username+"'  WHERE id= ?",[req.body.id] ,(err,result) =>{
+        if (err) {
+            res.status(500)
+            return res.end(err.message)
+        }
+        
+            res.status(200)
+            
+            res.redirect('/logout') 
+    })
+})
+   
+
+app.post('/delete_product/:id', (req,res) => {
+    var id = req.params.id
+    var sql = 'DELETE  FROM proizvodi WHERE id = ?'
+    connection.query(sql,[id],(err,result)=>{
+        if(err) {
+            res.status(500)
+            return res.end(err.message)
+        }
+        res.status(200)
+        res.redirect('/menu')
+    })
+})
+
+app.post('/update_product/:id',(req,res)=> {
+    var id = req.body.id
+    var sql="UPDATE proizvodi SET ime='"+ req.body.naziv+"', opis='"+ req.body.opis+"', slika='"+ req.body.slika+"', cena='"+ req.body.cena+"' WHERE id =" + id
+    connection.query(sql, (err,result) => {
+        if(err) {
+            res.status(500)
+            return res.end(err.message)
+        }
+
+        res.status(200)
+        res.redirect('/menu')
+    })
+})
+
+
+app.get('/product_izmena/:id', (req,res) => {
+    var id = req.params.id
+    var sql = 'SELECT * FROM proizvodi WHERE id ='+ id
+    var values = [
+        req.body.naziv,
+        req.body.cena,
+        req.body.slika,
+        req.body.opis
+    ];
+    connection.query(sql,[values], (err,result)=> {
+        if(err) {
+            res.status(500)
+            return res.end(err.message)
+        }
+
+        res.status(200)
+        res.render("product_izmena", {product_change: result})
+    })
+})
+
+
+app.get('/profil_izmena/:id', (req,res) => {
+    var id = req.params.id
+    var sql = 'SELECT * FROM korisnik WHERE id = '+ id
+    var values = [
+        [
+            req.body.id,
+            req.body.ime,
+            req.body.prezime,
+            req.body.datum_rodjenja,
+            req.body.email,
+            req.body.password,
+            req.body.username,
+            
+        ]
+    ]
+   connection.query(sql,[values], (err,result)=> {
+       if(err) {
+           res.status(500);
+           return res.end(err.message)
+       }
+
+       res.status(200)
+       res.render('acc_izmena',{izmena: result})
+   }) 
+})
 
 
 app.get('/contact',(req,res)=> {
-    res.render("kontakt")
+    res.render('kontakt')
+   
 })
 
 app.get('/register',(req,res)=> {
@@ -141,39 +218,34 @@ app.get('/login',(req,res)=> {
 app.post('/login', (req,res)=> {
     var email = req.body.email;
     var password = req.body.lozinka; 
-    var name = req.body.ime
-      connection.query("SELECT * FROM korisnik WHERE ime= ? AND email = ? AND password = ?", [ name, email, password], function (err, result) {
+   
+      connection.query("SELECT * FROM korisnik WHERE  email = ? AND password = ?", [ email, password], function (err, result) {
           
         if(result.length>0) {
                 
                 req.session.korisnik= {
                     email: email,
-                    name: name,
+                    user_info: result
                 }
-                
-
                 console.log(req.session.korisnik.name)
             
                res.status(200)
                 res.redirect('/')
                 return res.end("Uspesno logovanje")
-                
             }
-            
             if(err) {
                 res.status(404)
                 return res.end(err.message)
             }
-            
              res.redirect('/login')
 
-            
-        
         })
 }) 
 
 
-
+app.get('/',(req,res)=> {
+res.render('index')
+})
 /*
 connection.connect(function(err) {
     if (err) throw err;

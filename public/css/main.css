@@ -1076,6 +1076,16 @@ footer > small {
     justify-content: center;
 }
 
+.slovo a {
+    color: var(--navbutton);
+    text-decoration: unset;
+}
+
+.slovo a:hover {
+    color: var(--navbutton);
+  
+}
+
 .slovo:hover {
     background-color: var(--elementA);
     transition: 300ms;

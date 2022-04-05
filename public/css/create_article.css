@@ -136,3 +136,15 @@ input[type=submit]:hover {
     justify-content: center;
     margin-top: 10px;
 }
+
+
+@media only screen and (max-width: 500px) {
+    input:nth-child(1) {
+        margin-right: 0px;
+        width: 100%;
+    }
+    input:nth-child(2) {
+        width: 100%;
+        margin-left: 0px;
+    }
+}

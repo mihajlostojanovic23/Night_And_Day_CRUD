@@ -1,0 +1,108 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    color: #ffbb00;
+    text-align: center;
+    font-size: 23px;
+    margin: 7px 0px;
+}
+
+body {
+    background-color: rgb(22, 22, 22);
+    
+}
+
+h1 {
+    color: #ffbb00; 
+    font-size: 40px;
+    text-align: center;
+}
+
+.profile_container {
+    display: flex;
+    justify-content: center;
+}
+
+.profile {
+    width: 500px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 9px 10px 20px 3px rgba(0,0,0,0.77);
+-webkit-box-shadow: 9px 10px 20px 3px rgba(0,0,0,0.77);
+-moz-box-shadow: 9px 10px 20px 3px rgba(0,0,0,0.77);
+
+}
+
+.logo img {
+    background-size: 100%;
+    width: 250px;
+}
+
+.profile_name {
+text-align: center;
+font-size: 25px;
+}
+
+.logout  {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#ffbb00;
+    transition: 300ms;
+    border-radius: 5px;
+}
+
+form button {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#ffbb00;
+    transition: 300ms;
+    border-radius: 5px;
+    border: 0px;
+    color: black;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color:#d19a02;
+    transition: 300ms;
+}
+
+
+.logout a {
+ text-decoration: none;
+color: black;
+}
+
+.logout:hover{
+    background-color:#d19a02;
+    transition: 300ms;
+    
+}
+
+.previous {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+
+div span {
+    color: white;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width:655px) {
+    .profile {
+        width: 100%;
+    }
+}

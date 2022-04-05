@@ -39,8 +39,15 @@
             <div class="product_name"><%=proizvod.ime%></div>
             <div class="product_details" style="overflow: hidden;" id="details_product"><%= proizvod.opis%></div>
             <div class="product_price">Cena: <%= proizvod.cena %> rsd</div>
-            <div class="button">  <button class="btn_details">Details</button></div>
-          
+            <% if(locals.mail === 'mihajlomixi@live.co.uk') {%>
+                
+            <form class="change_form" action="/product_izmena/<%= proizvod.id %>" method="GET">
+            <button class="change" type="submit">Izmeni</button>
+            </form>
+            
+                <form class="delete_form" action="/delete_product/<%= proizvod.id %>" method="POST">
+                <button class="delete" type="submit">Obrisi</button>
+                </form> <% } %>
             
         </div>
         

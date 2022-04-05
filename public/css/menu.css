@@ -320,6 +320,15 @@ transition: 400ms;
     transition: 300ms;
 }
 
+.slovo a {
+    color: var(--navbutton);
+    text-decoration: unset;
+}
+
+.slovo a:hover {
+    color: var(--navbutton);
+  
+}
 
 /**************************************************************************************/
 /*font-family: 'Indie Flower', cursive;*/
@@ -452,6 +461,36 @@ border-radius: 10px;
     background-color: #d49c00;
     transition: 300ms;
 }
+
+.change_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form .change {
+    width: 170px;
+    height: 40px;
+    margin: 10px 0px;
+}
+.delete_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form .delete {
+    width: 170px;
+    height: 40px;
+    margin: 10px 0px;  
+}
+
+.delete, .change {
+    background-color: #e7ab04;
+    border: 0px;
+    border-radius: 5px;
+}
+
 
 .create_prod {
     width: 100%;
